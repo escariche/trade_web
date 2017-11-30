@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: source /
     destination: /home/ec2-user/trade-website
 
 permissions:
@@ -16,7 +16,6 @@ hooks:
      timeout: 10
      runas: ec2-user
 
-BeforeInstall:
  BeforeInstall:
     - location: bin/install-pkgs
       timeout: 300
