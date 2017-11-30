@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: source /
+  - source: /
     destination: /home/ec2-user/trade-website
 
 permissions:
@@ -26,15 +26,7 @@ hooks:
      timeout: 60
      runas: ec2-user
 
-  ValidateService:
-   - location: bin/app-validate
-     timeout: 10
-     runas: ec2-user
-
   BeforeInstall:
    - location: bin/install-pkgs
-     timeout: 300
-     runas: ec2-user
-   - location: bin/app-start
      timeout: 300
      runas: ec2-user
