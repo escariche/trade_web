@@ -1,2 +1,2 @@
 #!/bin/sh
-forever start server.js
+node start server.js

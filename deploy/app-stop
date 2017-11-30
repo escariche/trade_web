@@ -1,2 +1,2 @@
 #!/bin/sh
-forever stop server.js
+node stop server.js
