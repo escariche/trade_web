@@ -16,6 +16,11 @@ hooks:
      timeout: 10
      runas: ec2-user
 
+BeforeInstall:
+ - location: bin/install-pkgs
+   timeout: 1200
+   runas: ec2-user
+
   AfterInstall:
    - location: bin/install-pkgs
      timeout: 1200
@@ -24,4 +29,9 @@ hooks:
   ApplicationStart:
    - location: bin/app-start
      timeout: 60
+     runas: ec2-user
+
+  ValidateService:
+   - location: bin/app-validate
+     timeout: 10
      runas: ec2-user
