@@ -19,7 +19,7 @@ hooks:
   AfterInstall:
    - location: bin/install-pkgs
      timeout: 1200
-     runas: ec2-user
+     runas: root
 
   ApplicationStart:
    - location: bin/app-start
@@ -29,4 +29,4 @@ hooks:
   BeforeInstall:
    - location: bin/install-pkgs
      timeout: 300
-     runas: ec2-user
+     runas: root

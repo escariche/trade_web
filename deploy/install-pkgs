@@ -1,4 +1,4 @@
 #!/bin/sh
 cd /home/ec2-user/trade-website
-yum install -y nodejs npm
+sudo yum install -y nodejs npm
 npm install
