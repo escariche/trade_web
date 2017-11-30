@@ -9,6 +9,6 @@ hooks:
       timeout: 300
       runas: root
   AfterInstall:
-    - location: deploy/after_server
+    - location: deploy/restart_server
       timeout: 300
       runas: root
