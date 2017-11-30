@@ -30,11 +30,11 @@ hooks:
    - location: bin/app-validate
      timeout: 10
      runas: ec2-user
-     
-     BeforeInstall:
-       - location: bin/install-pkgs
-       timeout: 300
-       runas: root
-       - location: bin/app-start
-       timeout: 300
-       runas: root
+
+  BeforeInstall:
+   - location: bin/install-pkgs
+     timeout: 300
+     runas: ec2-user
+   - location: bin/app-start
+     timeout: 300
+     runas: ec2-user
