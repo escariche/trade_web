@@ -11,10 +11,7 @@ permissions:
    group: ec2-user
 
 hooks:
-  BeforeInstall:
-    - location: install-pkgs
-      timeout: 300
-      runas: root
+
 
   AfterInstall:
     - location: bin/after-install
