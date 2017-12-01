@@ -11,22 +11,27 @@ permissions:
    group: ec2-user
 
 hooks:
+  BeforeInstall:
+    - location: install-pkgs
+      timeout: 300
+      runas: root
+
+  AfterInstall:
+    - location: bin/after-install
+    timeout: 1200
+    runas: root
+
   ApplicationStop:
    - location: bin/app-stop
      timeout: 10
      runas: ec2-user
-
-  AfterInstall:
-   - location: bin/install-pkgs
-     timeout: 1200
-     runas: root
 
   ApplicationStart:
    - location: bin/app-start
      timeout: 60
      runas: ec2-user
 
-  BeforeInstall:
-   - location: bin/install-pkgs
-     timeout: 300
-     runas: root
+  ValidateService:
+  - location: validate
+    timeout: 60
+    runas: ec2-user
