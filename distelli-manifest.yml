@@ -8,7 +8,7 @@ escarizj/trade_web:
     - sudo apt-get -y update
     - sudo apt-get -y install nodejs
   Env:
-    - PORT: "3000"
+    - PORT: "80"
   Exec:
     - cd home/ec2-user/trade_web
     - npm start
