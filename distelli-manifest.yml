@@ -1,4 +1,4 @@
-escarizj/trade-website:
+escarizj/trade_web:
   Build:
     - npm install
     - npm test
