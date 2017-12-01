@@ -10,4 +10,5 @@ escarizj/trade_web:
   Env:
     - PORT: "3000"
   Exec:
-    - nodejs server.js
+    - cd home/ec2-user/trade_web
+    - npm start
