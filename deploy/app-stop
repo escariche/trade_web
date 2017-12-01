@@ -1,2 +1,3 @@
 #!/bin/sh
+cd ~/trade-website
 node stop server.js
