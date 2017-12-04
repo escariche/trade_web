@@ -30,7 +30,7 @@
         // Assuming you get an array of objects.
         elements = JSON.parse(elements);
 
-        elements.forEach(funciton (element) {
+        elements.forEach(function (element) {
             var div = document.getElementById(element.id);
             div.innerHTML = element.text;
         });
