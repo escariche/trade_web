@@ -23,40 +23,12 @@
 </div>
   <br/>
   <div class="jumbotron">
-  <p>
-    Topics
-  </p>
-  <div id="topic_list">
-    <script>
-      function createElements(elements) {
-        // Assuming you get an array of objects.
-        elements = JSON.parse(elements);
-
-        elements.forEach(function (element) {
-            var div = document.getElementById(element.id);
-            div.innerHTML = element.text;
-        });
-      }
-
-      function reqListener () {
-        console.log(this.responseText);
-      }
-
-      var oReq = new XMLHttpRequest();
-      const kafkaReqAddress = 'http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/'
-      oReq.addEventListener("load", reqListener);
-      oReq.open("GET", kafkaReqAddress + "topics");
-      oReq.send();
-      //
-      // var request = new XMLHttpRequest();
-      //
-      // request.onload = createElements;
-      // //request.addHeader("Access-Control-Allow-Origin", kafkaReqAddress);
-      // request.open("get", kafkaReqAddress + "topics", true);
-      // request.send();
-    </script>
+    <p>
+      <h1>
+        Topics
+      </h1>
+    </p>
   </div>
-</div>
   </div>
 </body>
 </html>

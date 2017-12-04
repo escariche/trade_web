@@ -19,9 +19,9 @@ router.get("/",function(req,res){
 });
 
 router.get("/topics",function(req,res){
-  // request(kafkaReqAddress + "topics", function(error, response, body) {
-  // console.log(body);
-  // });
+  request(kafkaReqAddress + "topics", function(error, response, body) {
+  console.log(body);
+  });
   res.sendFile(path + "topics.html");
 });
 
@@ -43,5 +43,3 @@ app.use("*",function(req,res){
 app.listen(3000,function(){
   console.log("Live at Port 3000");
 });
-
-this.setRequestHeader( 'Access-Control-Allow-Origin', kafkaReqAddress);
