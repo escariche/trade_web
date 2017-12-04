@@ -4,6 +4,7 @@ const app = express();
 const router = express.Router();
 const path = __dirname + '/views/';
 
+
 const kafkaReqAddress = 'http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/'
 
 
@@ -19,7 +20,7 @@ router.get("/",function(req,res){
 router.get("/topics",function(req,res){
   request(kafkaReqAddress + "topics", function(error, response, body) {
   console.log(body);
-  paintTopics(body);  
+  paintTopics(body);
   });
   res.sendFile(path + "topics.html");
 });
