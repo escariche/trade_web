@@ -22,7 +22,7 @@ router.get("/topics",function(req,res){
   request(kafkaReqAddress + "topics", function(error, response, body) {
   console.log(body);
   // auxModule.paintTopics(body);
-  document.getElementById('jumbotron').innerHTML = qs.stringify(body, "</p>", " >> ");
+  $(document).getElementById('jumbotron').innerHTML = qs.stringify(body, "</p>", " >> ");
   });
   res.sendFile(path + "topics.html");
 });
