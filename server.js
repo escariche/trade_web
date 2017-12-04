@@ -25,7 +25,7 @@ router.get("/topics",function(req,res){
 
   // auxModule.paintTopics(body);
   });
-  res.sendFile("topics.html");
+  res.sendFile(path + "topics.html");
 });
 
 router.get("/about",function(req,res){
