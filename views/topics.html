@@ -38,14 +38,22 @@
         });
       }
 
-      var request = new XMLHttpRequest();
-      // var response = new XMLHttpResponse();
+      function reqListener () {
+        console.log(this.responseText);
+      }
 
-      request.onload = createElements;
+      var oReq = new XMLHttpRequest();
       const kafkaReqAddress = 'http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/'
-      //request.addHeader("Access-Control-Allow-Origin", kafkaReqAddress);
-      request.open("get", kafkaReqAddress + "topics", true);
-      request.send();
+      oReq.addEventListener("load", reqListener);
+      oReq.open("GET", kafkaReqAddress + "topics");
+      oReq.send();
+      // 
+      // var request = new XMLHttpRequest();
+      //
+      // request.onload = createElements;
+      // //request.addHeader("Access-Control-Allow-Origin", kafkaReqAddress);
+      // request.open("get", kafkaReqAddress + "topics", true);
+      // request.send();
     </script>
   </div>
 </div>
