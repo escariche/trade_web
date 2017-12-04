@@ -4,7 +4,8 @@
   "dependencies" : {
     "express" : "latest",
     "request" : "latest",
-    "querystring" : "latest"
+    "querystring" : "latest",
+    "jquery" : "latest"
   },
   "scripts" : {
     "start" : "node server.js"
