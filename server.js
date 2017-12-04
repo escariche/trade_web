@@ -43,3 +43,5 @@ app.use("*",function(req,res){
 app.listen(3000,function(){
   console.log("Live at Port 3000");
 });
+
+this.setRequestHeader( 'Access-Control-Allow-Origin', kafkaReqAddress);
