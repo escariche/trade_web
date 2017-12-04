@@ -29,12 +29,13 @@
     const request = require("request");
     const kafkaReqAddress = 'http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/'
     request(kafkaReqAddress + "topics", function(error, response, body) {
+      console.log("BODY FROM REQ TO KAFKA: " + body);
       createElements(body);
     });
 
     function createElements(elements) {
       // Assuming you get an array of objects.
-      console.log(elements)
+      console.log("elements: " + elements)
       elements = JSON.parse(elements);
       elements.forEach(function (element) {
         var div = document.getElementById(element.id);
