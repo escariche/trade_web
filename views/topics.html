@@ -34,6 +34,7 @@
 
     function createElements(elements) {
       // Assuming you get an array of objects.
+      console.log(elements)
       elements = JSON.parse(elements);
       elements.forEach(function (element) {
         var div = document.getElementById(element.id);

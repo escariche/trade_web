@@ -22,7 +22,7 @@ router.get("/topics",function(req,res){
   request(kafkaReqAddress + "topics", function(error, response, body) {
   console.log(body);
   });
-  res.send(body);
+  res.sendFile(path + "topics.html");
 });
 
 router.get("/about",function(req,res){
