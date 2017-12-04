@@ -3,7 +3,8 @@
   "version" : "0.0.1",
   "dependencies" : {
     "express" : "latest",
-    "request" : "latest"
+    "request" : "latest",
+    "querystring" : "latest"
   },
   "scripts" : {
     "start" : "node server.js"
