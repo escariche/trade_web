@@ -3,7 +3,9 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
+<customHeaders>
+          <add name="Access-Control-Allow-Origin" value="http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/" />
+</customHeaders>
 </head>
 <body>
   <div>
@@ -41,7 +43,7 @@
 
       request.onload = createElements;
       const kafkaReqAddress = 'http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/'
-      request.addHeader("Access-Control-Allow-Origin", kafkaReqAddress);
+      //request.addHeader("Access-Control-Allow-Origin", kafkaReqAddress);
       request.open("get", kafkaReqAddress + "topics", true);
       request.send();
     </script>
