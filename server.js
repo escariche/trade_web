@@ -20,7 +20,12 @@ router.get("/",function(req,res){
 });
 
 router.get("/topics",function(req,res){
-  res.sendFile(path + "topics.html");
+  request(kafkaReqAddress + "topics", function(error, response, body) {
+  console.log(body);
+
+  // auxModule.paintTopics(body);
+  });
+  // res.sendFile(path + "topics.html");
 });
 
 router.get("/about",function(req,res){

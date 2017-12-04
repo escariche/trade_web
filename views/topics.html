@@ -2,6 +2,8 @@
 <head>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 </head>
 <body>
   <div>
@@ -24,21 +26,21 @@
   </p>
   <div id="topic_list">
     <script>
+    const kafkaReqAddress = 'http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/'
+    request(kafkaReqAddress + "topics", function(error, response, body) {
+      createElements(body);
+    });
+
     function createElements(elements) {
-  // Assuming you get an array of objects.
-  elements = JSON.parse(elements);
-
-  elements.forEach(funciton (element) {
-      var div = document.getElementById(element.id);
-      div.innerHTML = element.text;
-  });
-}
-
-var request = new XMLHttpRequest();
-
-request.onload = createElements;
-request.open("get", "datas.json", true);
-request.send();
+      // Assuming you get an array of objects.
+      elements = JSON.parse(elements);
+      elements.forEach(function (element) {
+        var div = document.getElementById(element.id);
+        div.innerHTML = element.text;
+      });
+    }
+    // request.onload = createElements;
+    //request.send();
     </script>
   </div>
 </div>
