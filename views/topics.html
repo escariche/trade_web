@@ -44,10 +44,11 @@
 
       var oReq = new XMLHttpRequest();
       const kafkaReqAddress = 'http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/'
+      httpRequest.setRequestHeader( 'Access-Control-Allow-Origin', kafkaReqAddress);
       oReq.addEventListener("load", reqListener);
       oReq.open("GET", kafkaReqAddress + "topics");
       oReq.send();
-      // 
+      //
       // var request = new XMLHttpRequest();
       //
       // request.onload = createElements;
