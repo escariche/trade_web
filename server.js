@@ -17,7 +17,7 @@ router.get("/",function(req,res){
 });
 
 router.get("/topics",function(req,res){
-  request(kafkaReqAddress + "/topics", function(error, response, body) {
+  request(kafkaReqAddress + "topics", function(error, response, body) {
     console.log(body);
   });
   res.sendFile(path + "topics.html");
