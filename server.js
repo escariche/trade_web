@@ -46,9 +46,3 @@ app.use("*",function(req,res){
 app.listen(3000,function(){
   console.log("Live at Port 3000");
 });
-
-// $("#btn-save").click();
-// var text = $("#textarea").val();
-function toHtmlFile(filename, content){
-  saveAs(content, path + filename + ".html");
-}
