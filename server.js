@@ -19,10 +19,13 @@ router.get("/",function(req,res){
 });
 
 router.get("/topics",function(req,res){
-  request(kafkaReqAddress + "topics", function(error, response, body) {
+  var requestedPage = "topics"
+  request(kafkaReqAddress + requestedPage, function(error, response, body){
   console.log(body);
+  toHtmlFile(requestedPage, body)
   });
   res.sendFile(path + "topics.html");
+  console.log("Just ran sendFile in server.js");
 });
 
 router.get("/about",function(req,res){
@@ -43,3 +46,10 @@ app.use("*",function(req,res){
 app.listen(3000,function(){
   console.log("Live at Port 3000");
 });
+
+// $("#btn-save").click();
+// var text = $("#textarea").val();
+function toHtmlFile(filename, content){
+  var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
+  saveAs(blob, path + filename + ".html");
+}
