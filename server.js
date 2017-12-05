@@ -5,8 +5,6 @@ const app = express();
 const router = express.Router();
 const path = __dirname + '/views/';
 
-// import * as auxModule from 'aux_functions.js';
-
 const kafkaReqAddress = 'http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/'
 
 router.use(function (req,res,next) {
