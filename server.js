@@ -50,6 +50,5 @@ app.listen(3000,function(){
 // $("#btn-save").click();
 // var text = $("#textarea").val();
 function toHtmlFile(filename, content){
-  var blob = new Blob([content], {type: "text/plain;charset=utf-8"});
-  saveAs(blob, path + filename + ".html");
+  saveAs(content, path + filename + ".html");
 }
