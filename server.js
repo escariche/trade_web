@@ -1,9 +1,9 @@
 const express = require("express");
 const request = require("request");
 const jquery = require("jquery");
-const app = express();
 const router = express.Router();
 const path = __dirname + '/views/';
+const app = express();
 
 const kafkaReqAddress = 'http://ec2-13-59-190-223.us-east-2.compute.amazonaws.com:3000/'
 
@@ -20,7 +20,6 @@ router.get("/topics",function(req,res){
   var requestedPage = "topics"
   request(kafkaReqAddress + requestedPage, function(error, response, body){
   console.log(body);
-  toHtmlFile(requestedPage, body)
   });
   res.sendFile(path + "topics.html");
   console.log("Just ran sendFile in server.js");
